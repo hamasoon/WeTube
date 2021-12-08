@@ -1,0 +1,4 @@
+package.json의 dependencies
+-> 해당 project에 필요한 npm module에 대한 내용을 저장
+-> 해당 module들은 node_modules에 자동으로 저장
+-> if) node_modules이 없더라 하더라도 dependencies에 저장되어 있으면 npm install명령어로 설치 가능ㄴ
