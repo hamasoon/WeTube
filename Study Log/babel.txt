@@ -1,0 +1,11 @@
+babel
+-> 최신 JS 코드부터 오래전 버전 코드까지 전부 통용가능하도록 컴파일
+-> npm i --save-dev @babel/core
+-> babel.config.json 파일 만들고
+{
+  "presets": ["@babel/preset-env"]
+}
+
+-> 그 후 npm install @babel/preset-env --save-dev 실행
+
+-> "dev": "babel-node index.js" 로 babel적용한 index.js 실행

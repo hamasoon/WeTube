@@ -1,0 +1,5 @@
+NodeMon
+-> 수정사항 저장 이후 자동으로 재실행
+-> npm i nodemon --save-dev // 설치
+-> "dev": "nodemon --exec babel-node index.js"
+-> node-js 인식 오류시.. npm install --save-dev @babel/node 할것
