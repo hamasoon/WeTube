@@ -1,0 +1,17 @@
+const handleHome = (req, res) =>{
+	console.log("fuck you!");
+	return res.send("fuck you!");//what the fuck? 
+-> 이게 바로 request를 종료한 것 즉 return 했다!
+-> response 객체를 반환해야 하는데... 거기에 fuck you를 딸려보낸것.
+} //request와 response 객체->event 객체 같은거임
+
+Summary:
+1. Though setting up .get("URL", "GET handler function") will handle a Get request, it will not respond to a GET reqeust.
+2. In order to make a server respond to a user's GET request, you need to modify the EventHandler function into an arrow function. Then, make the response argument .end() or .send() as below:
+const handleHome = (req, res) => {
+return res.send("I still love you.");
+};
+3. The first argument inside GET handler function is usually named "req," it takes in a request object.
+4. The second argument is usually named "res," and it takes in a response object.
+5. res.end() will end the response without returning anything; res.send() will return an input to the user's browser. For this particular example, the user will see a string "I still love you." on their browser when they request for a home ("/") URL page to a server.
+I hope this helps! Good luck to you all! :)

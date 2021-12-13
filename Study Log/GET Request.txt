@@ -1,0 +1,35 @@
+Cannot GET /
+-> GET은 http의 Method// http는 서버끼리 의사소통하는 방식
+-> GET은 무엇인가를 서버에 요청하는 것을 의미
+-> get the page : request 
+여기서 /이 페이지를 의미함 
+-> 즉... 이 문구는  / 페이지를 요청했으나 받지 못했음을 의미하는 것으로 보임!
+
+[reviewbot3.1]
+/ --.> server의 root
+GET - http method
+
+
+const handleGet = () => console.log("fuck you!");
+
+app.get("/", handleGet);//root로 Request를 보내면 callback을 시켜주겠다.
+-> 실재 실행시 fuck you 실행됨
+
+but console.log 는 좋은 대답이 아님 // 우리느 html을 원한다!
+
+How to respond to a GET request, which is one kind of requests & How the HTTP requests work (When they start and how they die)
+After we create express app, we can write code that relates to express.
+- We create the application, configure it, and open it to the outside the world.
+
+Requests & responses
+- Request: the user is asking or you something (basically doing something to you)
+-- Our case: the browser is requesting the homepage (root) with a GET
+- app.get("/", () => console.log("Somebody is trying to go home."));
+: teach my app that when somebody sends a GET request to some route, we're going to add and create a callback
+-- You need to send a function
+-- The browser is sending you a GET request
+- How requests work: "The browser says I want to get this url.
+Okay, my server can handle that. So then when your request comes in, your server now knows that we can handle that. And it moves onto the function."
+- When the user says "give me," what the browser is actually doing is making a GET request
+-- GET request: has a route
+--- Route: where we're going or what we're trying to get
