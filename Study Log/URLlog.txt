@@ -1,0 +1,15 @@
+:id : url parameter
+-> url안의 변수(:nameofVariable)
+
+req.params로 저장되며
+{ id: '12312' } 이런식으로 인식함
+-> 실험대상 : http://localhost:4000/videos/12312
+
+단... 파라미터 사용시 파라미터 미사용 url보다 아래 오도록 해야함
+
+videoRouter.get("/upload", upload);
+videoRouter.get("/:id", watch);
+videoRouter.get("/:id/edit", edit);
+videoRouter.get("/:id/delete", deleteVideo);
+-> 이론상 upload 역시 id가 될 수 있어서...
+-> :id전에 검사하는게 도리에 맞음
