@@ -1,0 +1,14 @@
+이제... res.send()에 html을 반환하자
+-> send("<!DOCTYPE html>~~~~~") 이런식으로 직접 send 안에 코드를 쳐넣는 방법이 있긴하지만
+-> 상식적으로 말이 안된다는건 알거다.
+
+원래는 html 파일을 넣을 수 있지만... 우리는 Pug라는 걸 이용할 것이다.
+app.set("view engine", "pug"); : pug를 html 대신 사용하겠다 선언
+
+기본적으로 express는 views라는 파일안에서 view 파일들을 찾는다(html같은거)
+-> 현재 작업 위치(Current Working Directory : cwd) 기준으로 view임!
+-> 기본적으로 package.json이 우리의 서버 기동 장치이기 때문에... 일반적으로 최상위가 cwd가 됨
+-> 변경이 필요하면... app.set("views", process.cwd() + "/src/views");
+
+-> res.render("home");
+-> 이런식으로 불러오며 따로 import조차 필요없다.

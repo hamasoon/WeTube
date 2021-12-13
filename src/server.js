@@ -8,8 +8,10 @@ const PORT = 4000;
 
 const app = express();//express appilcation create
 //--------------------------------------미들웨어------------------------------------------
-app.use(morgan("dev"));
+app.set("view engine", "pug");
+app.set("views", process.cwd() + "/src/views");
 
+app.use(morgan("dev"));
 //--------------------------------------라우터설정------------------------------------------
 app.use("/", globalRouter);
 app.use("/users", userRouter);

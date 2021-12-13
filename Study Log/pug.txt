@@ -1,0 +1,5 @@
+
+
+-> partial
+-> include 를 통해서 지정된 pug를 삽입 가능!
+-> ex) include partials/footer.pug
