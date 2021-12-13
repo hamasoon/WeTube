@@ -1,0 +1,13 @@
+import는 header 같은거다. 여기까진 이해되지?
+
+-> export 방식에는 2가지가 있다.
+1) export default
+2) 변수를 독립적으로 export
+
+-> export default의 경우에는 한 js파일에서 한번만 쓸 수 있다.
+-> 이 경우에는 import 이름과는 상관없이 해당 파일을 import한 경우 export한 대상이 import 된다.
+-> 따라서 export하고싶은게 1가지인 파일에 쓰는것
+
+-> 반면에 변수를 따로따로 export 할 수도 있는데...
+-> 이 경우에는 선언과 동시에 export 해야한다.
+-> ex) export const ~~~~~~;

@@ -1,0 +1,46 @@
+Router : 컨트롤러와 Url관리를 용이하게 만듬
+
+기본적으로 서버라는 회사에는 req를 처리하는 Controller(직원)이 존재합니다.
+그러나 사장이 모든 직원을 관리할 수 없기에 중간관리자가 있습니다.
+서버에서 Router는 그런 역할을 합니다.
+
+const globalRouter = express.Router();
+
+const handleHome = (req, res) => res.send("Home");
+const loginController = (req, res) => res.send("Login");
+
+const userRouter = express.Router();
+
+const userController = (req, res) => res.send("User Profile");
+
+const videoRouter = express.Router();
+
+const videoController = (req, res) => res.send("Video Profile");
+const videoWatchController = (req, res) => res.send("Watch Video");
+
+-> 먼저 app에서 express.Router()를 통해 객체에 권한을 부여해 줍니다.
+
+app.use("/", globalRouter);
+app.use("/users", userRouter);
+app.use("/videos", videoRouter);
+
+-> 그 이후에 사용자 등록을 통해서 어떤 부서(URL)을 관리할지 배정을 합니다.
+
+globalRouter.get("/", handleHome);
+globalRouter.get("/login", loginController);
+
+-> 그리고 각각의 부서의 하위직원(URL)은 Router를 통해서 일하게끔 적용을 합니다.
+
+userRouter.get("/", userController);
+
+videoRouter.get("/", videoController);
+videoRouter.get("/watch", videoWatchController);
+-> 코드상으로는 /watch라고 적혀있지만... 이미 videos 부서 안에 있으므로
+실질적으로는 /videos/watch입니다.
+
+실재로는 각각의 Router를 보통 다른 js파일로 만들어서 import합니다.
+그리고 import를 하기위해선 먼저 원본이 export해줘야합니다.
+따라서... in globalRouter에서 코드 맨 끝자락에
+export default globalRouter; 로 export한 후에
+사용처인 server.js에서 import합니다
+import globalRouter from "./routers/globalRouter";
