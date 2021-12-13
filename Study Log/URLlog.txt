@@ -13,3 +13,6 @@ videoRouter.get("/:id/edit", edit);
 videoRouter.get("/:id/delete", deleteVideo);
 -> 이론상 upload 역시 id가 될 수 있어서...
 -> :id전에 검사하는게 도리에 맞음
+
+-> id는 database(MongoDB)를 이용할건데... 일단은 정규식으로 숫자로 표현해놓자
+-> 이는 이유가 있으니까... 일단 하라는대로 해
